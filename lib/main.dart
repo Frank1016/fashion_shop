@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:card_swiper/card_swiper.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -17,8 +19,56 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    List<String> list = [
+      'images/m1.jpeg',
+      'images/m2.jpg',
+      'images/w1.jpeg',
+      'images/w3.jpeg',
+      'images/w4.jpeg',
+      'images/c1.jpg',
+    ];
+    Widget swiper = Container(
+      height: 200.0,
+      child: Swiper(
+        itemBuilder: (context, index) {
+          final image = list[index];
+          return Image.asset(
+            image,
+            fit: BoxFit.cover,
+          );
+        },
+        indicatorLayout: PageIndicatorLayout.COLOR,
+        autoplay: false,
+        itemCount: list.length,
+        pagination: const SwiperPagination(),
+        control: const SwiperControl(),
+      ),
+    );
+
+    Widget image_carousel = Container(
+      height: 200.0,
+      child: CarouselSlider(
+        options: CarouselOptions(
+          height: 200.0,
+          enlargeCenterPage: true,
+          aspectRatio: 16 / 9,
+          autoPlay: false,
+        ),
+        items: list
+            .map((e) => Container(
+                  child: Image.asset(
+                    e,
+                    fit: BoxFit.cover,
+                    width: 400.0,
+                  ),
+                ))
+            .toList(),
+      ),
+    );
+
     return Scaffold(
       appBar: AppBar(
+        elevation: 5,
         backgroundColor: Colors.red,
         title: Text('Fashion Shop'),
         actions: [
@@ -34,13 +84,89 @@ class _HomePageState extends State<HomePage> {
               ))
         ],
       ),
+      body: swiper,
       drawer: Drawer(
         child: ListView(
           children: [
-            //header
+//header
             UserAccountsDrawerHeader(
-                accountName: Text('Frank Zeng'),
-                accountEmail: Text('zengfanjiang@gmail.com'))
+              accountName: Text('Frank Zeng'),
+              accountEmail: Text('zengfanjiang@gmail.com'),
+              currentAccountPicture: GestureDetector(
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey,
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              decoration: BoxDecoration(color: Colors.red),
+            ),
+//body
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('Home Page'),
+                leading: Icon(Icons.home),
+              ),
+            ),
+
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('My account'),
+                leading: Icon(Icons.person),
+              ),
+            ),
+
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('My orders'),
+                leading: Icon(Icons.shopping_basket),
+              ),
+            ),
+
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('Categories'),
+                leading: Icon(Icons.dashboard),
+              ),
+            ),
+
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('Favourites'),
+                leading: Icon(Icons.favorite),
+              ),
+            ),
+
+            Divider(),
+
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('Settings'),
+                leading: Icon(
+                  Icons.settings,
+                  color: Colors.blue,
+                ),
+              ),
+            ),
+
+            InkWell(
+              onTap: () {},
+              child: ListTile(
+                title: Text('About'),
+                leading: Icon(
+                  Icons.help,
+                  color: Colors.green,
+                ),
+              ),
+            ),
           ],
         ),
       ),
