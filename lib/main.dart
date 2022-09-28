@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:card_swiper/card_swiper.dart';
 
 import 'package:fashion_shop/components/horizontal_listview.dart';
+import 'package:fashion_shop/components/products.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -86,15 +87,23 @@ class _HomePageState extends State<HomePage> {
               ))
         ],
       ),
-      body: ListView(children: [
-        swiper,
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text('Categories'),
-        ),
-        //Horizontal list view
-        HorizontalList(),
-      ]),
+      body: ListView(
+        children: [
+          swiper,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Categories'),
+          ),
+          //Horizontal list view
+          HorizontalList(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text('Recent products'),
+          ),
+//Grid view
+          Container(height: 320.0, child: Products()),
+        ],
+      ),
       drawer: Drawer(
         child: ListView(
           children: [
