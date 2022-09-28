@@ -34,6 +34,18 @@ class _ProductsState extends State<Products> {
       'old price': 180,
       'price': 90,
     },
+    {
+      'name': 'Shoe',
+      'picture': 'images/products/shoe1.jpg',
+      'old price': 200,
+      'price': 80,
+    },
+    {
+      'name': 'Skirt',
+      'picture': 'images/products/skt1.jpeg',
+      'old price': 100,
+      'price': 60,
+    },
   ];
   @override
   Widget build(BuildContext context) {
@@ -81,32 +93,22 @@ class SingleProd extends StatelessWidget {
                       ))),
               child: GridTile(
                   footer: Container(
-                    color: Colors.white70,
-                    child: ListTile(
-                      leading: Container(
-                        alignment: Alignment.center,
-                        width: 100.0,
-                        child: Text(
-                          prod_name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                      title: Text(
-                        '\$$prod_price',
-                        style: TextStyle(
-                            color: Colors.red, fontWeight: FontWeight.w800),
-                      ),
-                      subtitle: Text(
-                        '\$$prod_old_price',
-                        style: TextStyle(
-                            color: Colors.black54,
-                            fontWeight: FontWeight.w800,
-                            decoration: TextDecoration.lineThrough),
-                      ),
-                    ),
-                  ),
+                      color: Colors.white70,
+                      child: Row(
+                        children: [
+                          Expanded(
+                              child: Text(
+                            prod_name,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 16.0),
+                          )),
+                          Text(
+                            '\$$prod_price',
+                            style: TextStyle(
+                                color: Colors.red, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      )),
                   child: Image.asset(
                     prod_picture,
                     fit: BoxFit.cover,
