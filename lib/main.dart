@@ -1,3 +1,4 @@
+import 'package:fashion_shop/pages/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:card_swiper/card_swiper.dart';
@@ -81,7 +82,10 @@ class _HomePageState extends State<HomePage> {
                 Icons.search,
               )),
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               icon: Icon(
                 Icons.shopping_cart,
               ))
@@ -157,7 +161,10 @@ class _HomePageState extends State<HomePage> {
             ),
 
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               child: ListTile(
                 title: Text('Shopping cart'),
                 leading: Icon(
