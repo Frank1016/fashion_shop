@@ -90,23 +90,20 @@ class Single_cart_product extends StatelessWidget {
           subtitle: Column(
             children: [
               Row(children: [
+                Text('Size: '),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('Size: '),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.fromLTRB(16.0, 8.0, 8.0, 8.0),
                   child: Text(
                     cart_prod_size,
                     style: TextStyle(color: Colors.red),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(20.0, 8.0, 8.0, 8.0),
+                  padding: const EdgeInsets.fromLTRB(30.0, 8.0, 8.0, 8.0),
                   child: Text('Color: '),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(4.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
                     cart_prod_color,
                     style: TextStyle(color: Colors.red),

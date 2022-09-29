@@ -47,13 +47,13 @@ class Category extends StatelessWidget {
       child: InkWell(
         onTap: () {},
         child: Container(
-          width: 100.0,
+          width: 80.0,
           child: Column(
             children: [
               Image.asset(
                 image_location,
-                width: 100.0,
-                height: 60.0,
+                width: 40.0,
+                height: 40.0,
               ),
               Text(image_caption)
             ],

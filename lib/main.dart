@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
               ))
         ],
       ),
-      body: ListView(
+      body: Column(
         children: [
           swiper,
           Padding(
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage> {
             child: Text('Recent products'),
           ),
 //Grid view
-          Container(height: 320.0, child: Products()),
+          Flexible(child: Products()),
         ],
       ),
       drawer: Drawer(
@@ -118,9 +118,8 @@ class _HomePageState extends State<HomePage> {
               currentAccountPicture: GestureDetector(
                 child: CircleAvatar(
                   backgroundColor: Colors.grey,
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.white,
+                  backgroundImage: AssetImage(
+                    'images/profile.jpg',
                   ),
                 ),
               ),
