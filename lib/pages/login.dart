@@ -102,22 +102,34 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: Text('Login'),
+        title: Text(
+          'Login',
+          style: TextStyle(color: Colors.red.shade900),
+        ),
         elevation: 0.5,
       ),
       body: Stack(
         children: [
           Center(
             child: TextButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.red.shade900)),
                 onPressed: () => handleSignIn(),
-                child: Text('Sign in / Sign up with Google')),
+                child: Text(
+                  'Sign in / Sign up with Google',
+                  style: TextStyle(color: Colors.white),
+                )),
           ),
           Visibility(
               visible: loading ?? true,
-              child: Container(
-                color: Colors.white.withOpacity(0.7),
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+              child: Center(
+                child: Container(
+                  alignment: Alignment.center,
+                  color: Colors.white.withOpacity(0.9),
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
+                  ),
                 ),
               ))
         ],
