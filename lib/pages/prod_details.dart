@@ -2,6 +2,8 @@ import 'package:fashion_shop/components/products.dart';
 import 'package:fashion_shop/main.dart';
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 class ProdDetails extends StatefulWidget {
   final prod_detail_name;
   final prod_detail_new_price;
@@ -28,7 +30,7 @@ class _ProdDetailsState extends State<ProdDetails> {
         backgroundColor: Colors.red,
         title: InkWell(
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage())),
+                context, MaterialPageRoute(builder: (context) => Home())),
             child: Text('Fashion Shop')),
         actions: [
           IconButton(
