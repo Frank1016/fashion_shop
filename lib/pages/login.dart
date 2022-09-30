@@ -38,7 +38,7 @@ class _LoginState extends State<Login> {
 
     if (isLogedin) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Home()));
+          context, MaterialPageRoute(builder: (context) => HomePage()));
     }
 
     setState(() {
@@ -46,7 +46,7 @@ class _LoginState extends State<Login> {
     });
   }
 
-  Future handleSignIn() async {
+  Future<void> handleSignIn() async {
     preferences = await SharedPreferences.getInstance();
     setState(() {
       loading = true;
@@ -109,7 +109,7 @@ class _LoginState extends State<Login> {
         children: [
           Center(
             child: TextButton(
-                onPressed: handleSignIn,
+                onPressed: () => handleSignIn(),
                 child: Text('Sign in / Sign up with Google')),
           ),
           Visibility(

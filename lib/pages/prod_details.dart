@@ -30,7 +30,7 @@ class _ProdDetailsState extends State<ProdDetails> {
         backgroundColor: Colors.red,
         title: InkWell(
             onTap: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Home())),
+                context, MaterialPageRoute(builder: (context) => HomePage())),
             child: Text('Fashion Shop')),
         actions: [
           IconButton(

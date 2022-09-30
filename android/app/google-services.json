@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "402725284255",
+    "firebase_url": "https://fashionshop-8a2e6-default-rtdb.firebaseio.com",
     "project_id": "fashionshop-8a2e6",
     "storage_bucket": "fashionshop-8a2e6.appspot.com"
   },
@@ -37,6 +38,13 @@
             {
               "client_id": "402725284255-fmoa3mcoosqdkt329eko7tkflj7dqf05.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "402725284255-g4e24486d8nna2rq8lugfmou5oin2kq3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fashionShop"
+              }
             }
           ]
         }
