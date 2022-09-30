@@ -1,6 +1,6 @@
 # fashion_shop
 
-A new Flutter project.
+A new Flutter project for e-shopping (unfinished). Demo url: https://fashionshop-8a2e6.web.app
 
 ## Getting Started
 
